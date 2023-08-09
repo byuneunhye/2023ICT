@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { TagList } from "../../components/Tag/data";
+import { useState } from "react";
 
 const MainPage = () => {
   function onChangeSearch() {}
+  const [search, setSearch] = useState("");
 
   return (
     <MainContainer>
@@ -56,6 +58,7 @@ const Input = styled.input`
   border: 3px solid #4f98ff;
   width: 960px;
   height: 76px;
+  padding-left: 30px;
   &::placeholder {
     color: #4f98ff;
     font-size: 22px;

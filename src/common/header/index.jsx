@@ -16,10 +16,10 @@ const Header = () => {
         <LogoText style={{ paddingTop: "15px" }}>요즘무엇</LogoText>
       </a>
       <Nav>
-        <a href="/post">
+        <a href="/write">
           <NavBox>
             <Red>New!</Red>
-            <NavT>취향확인</NavT>
+            <NavT>트렌드 작성</NavT>
           </NavBox>
         </a>
 
