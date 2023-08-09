@@ -1,25 +1,22 @@
-import styled from "styled-components";
-import Header from "./common/header";
-import MainPage from "./common/main";
+import Main from "./main";
+import PostPage from "./common/postpage";
+import Login from "./common/login";
+import Signup from "./common/signup";
+import WritePage from "./common/write";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Container>
-      <Header />
-      <MainMargin>
-        <MainPage />
-      </MainMargin>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/post" element={<PostPage />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/write" element={<WritePage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
-const Container = styled.div`
-  margin: 0;
-  padding: 0;
-`;
-
-const MainMargin = styled.div`
-  margin-top: 60px;
-`;

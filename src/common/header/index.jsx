@@ -4,16 +4,31 @@ import Logo from "../../components/img/logo.png";
 const Header = () => {
   return (
     <HeaderContainer>
-      <Img src={Logo} />
-      <LogoText>요즘무엇</LogoText>
+      <a
+        href="/"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          textDecoration: "none",
+        }}
+      >
+        <Img src={Logo} />
+        <LogoText style={{ paddingTop: "15px" }}>요즘무엇</LogoText>
+      </a>
       <Nav>
-        <NavBox>
-          <Red>New!</Red>
-          <NavT>취향확인</NavT>
-        </NavBox>
+        <a href="/post">
+          <NavBox>
+            <Red>New!</Red>
+            <NavT>취향확인</NavT>
+          </NavBox>
+        </a>
 
-        <NavT>로그인</NavT>
-        <NavT>회원가입</NavT>
+        <a href="login" style={{ textDecoration: "none" }}>
+          <NavT>로그인</NavT>
+        </a>
+        <a href="signup" style={{ textDecoration: "none" }}>
+          <NavT>회원가입</NavT>
+        </a>
       </Nav>
     </HeaderContainer>
   );
@@ -34,6 +49,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   margin: 10;
   padding: 5px 16px;
+  background-color: white;
 `;
 
 const Img = styled.img`
