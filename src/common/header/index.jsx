@@ -7,7 +7,11 @@ const Header = () => {
       <Img src={Logo} />
       <LogoText>요즘무엇</LogoText>
       <Nav>
-        <NavT>취향확인</NavT>
+        <NavBox>
+          <Red>New!</Red>
+          <NavT>취향확인</NavT>
+        </NavBox>
+
         <NavT>로그인</NavT>
         <NavT>회원가입</NavT>
       </Nav>
@@ -18,7 +22,6 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.div`
-  /* border: 1px solid black; */
   width: 100%;
   height: 68px;
   left: 0;
@@ -28,30 +31,49 @@ const HeaderContainer = styled.div`
   flex-direction: row;
   text-align: center;
   align-items: center;
-  /* justify-content: center; */
   position: fixed;
-  margin: 0;
+  margin: 10;
+  padding: 5px 16px;
 `;
 
 const Img = styled.img`
-  width: 60px;
-  height: 60x;
+  width: 50px;
+  height: 50x;
+  padding: 5px;
 `;
 
 const LogoText = styled.p`
   color: #4f98ff;
   font-size: 30px;
   font-weight: 700;
+  margin: 0px;
+`;
+
+const Nav = styled.div`
+  margin-left: 900px;
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  padding-top: 20px;
+  margin-top: -20px;
+`;
+
+const NavBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+`;
+
+const Red = styled.p`
+  color: #ee3d3d;
+  font-size: 9px;
+  font-weight: 400;
   margin: 0;
+  margin-top: -10px;
+  margin-left: -50px;
 `;
 
 const NavT = styled.p`
   color: #4f98ff;
-`;
-
-const Nav = styled.div`
-  margin-left: 840px;
-  display: flex;
-  flex-direction: row;
-  gap: 45px;
+  margin: 0;
 `;

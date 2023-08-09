@@ -21,5 +21,5 @@ const Container = styled.div`
 `;
 
 const MainMargin = styled.div`
-  margin-top: 50px;
+  margin-top: 60px;
 `;
