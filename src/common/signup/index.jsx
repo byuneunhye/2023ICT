@@ -1,7 +1,32 @@
 import styled from "styled-components";
 import LoginImg from "../../components/img/login.png";
+import { customAxios } from "../../apis";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const [joinData, setJoinData] = useState({
+    id: "",
+    pw: "",
+    name: "",
+  });
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setJoinData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const fetchPost = async () => {
+    try {
+      await customAxios.post("/user", joinData);
+      navigate("/");
+      alert("성공");
+    } catch {
+      alert("실패");
+    }
+  };
+
   return (
     <LoginContainer>
       <Left>
@@ -13,10 +38,25 @@ const Signup = () => {
           <LoginText>Signup</LoginText>
           <Explain>아주 환상적인 트렌드찾기를 시작해보세요!</Explain>
         </RightContent>
-        <Input placeholder="이름을 입력하세요"></Input>
-        <Input placeholder="아이디를 입력하세요"></Input>
-        <Input placeholder="비밀번호를 입력하세요"></Input>
-        <Button>SignUp</Button>
+        <Input
+          placeholder="이름을 입력하세요"
+          type="text"
+          name="name"
+          onChange={onChange}
+        ></Input>
+        <Input
+          placeholder="아이디를 입력하세요"
+          type="text"
+          name="id"
+          onChange={onChange}
+        ></Input>
+        <Input
+          placeholder="비밀번호를 입력하세요"
+          type="text"
+          name="pw"
+          onChange={onChange}
+        ></Input>
+        <Button onClick={fetchPost}>SignUp</Button>
       </Right>
     </LoginContainer>
   );

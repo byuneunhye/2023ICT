@@ -3,7 +3,7 @@ import Header from "../header";
 import { useState } from "react";
 import { customAxios } from "../../apis";
 
-const WritePage = () => {
+const Trend = () => {
   const [postData, setPostData] = useState({
     userId: "123",
     title: "",
@@ -29,23 +29,9 @@ const WritePage = () => {
     <Container>
       <Header />
       <PostContainer>
-        <Title
-          placeholder="트렌드 제목을 입력하세요"
-          onChange={onChange}
-          type="text"
-          name="title"
-        />
+        <Title>제목</Title>
         <TagContainer>
-          <TC>
-            태그
-            <Input
-              type="text"
-              placeholder="#   트렌드에 맞는 태그를 입력해주세요"
-            />
-            <button>추가</button>
-          </TC>
-
-          <Tag></Tag>
+          <Tag>태그</Tag>
         </TagContainer>
       </PostContainer>
 
@@ -55,7 +41,6 @@ const WritePage = () => {
         type="text"
         name="description"
       ></Content>
-      <Button onClick={fetchPost}>업로드</Button>
       {/* <Commend>
         <ComProfile>
           <UserId>유저</UserId>
@@ -69,7 +54,7 @@ const WritePage = () => {
   );
 };
 
-export default WritePage;
+export default Trend;
 
 const Container = styled.div`
   padding: 100px 100px;
@@ -80,7 +65,7 @@ const PostContainer = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.input`
+const Title = styled.div`
   color: black;
   font-size: 50px;
   font-weight: 500;
@@ -89,13 +74,14 @@ const Title = styled.input`
   margin: 0;
 `;
 
-const Tag = styled.input`
+const Tag = styled.div`
   width: 152px;
   height: 46px;
   border-radius: 76px;
   border: 2px solid #d0ebfe;
   text-align: center;
   align-items: center;
+  justify-content: center;
   margin-top: 30px;
 `;
 
@@ -104,8 +90,6 @@ const Content = styled.textarea`
   height: 526px;
   border: 1px solid #4f98ff;
   margin-top: 50px;
-  font-size: 20px;
-  padding: 30px;
 `;
 
 // const ComProfile = styled.div`
@@ -150,23 +134,15 @@ const TagContainer = styled.div`
   height: 200px;
   border: 1px solid black;
   margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-`;
-
-const TC = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
 `;
 
 const Button = styled.button`
-  width: 202px;
-  height: 90px;
+  width: 252px;
+  height: 100px;
   border-radius: 100px;
   margin-top: 30px;
-  background-color: #d0ebfe;
+  background-color: #4f98ff;
   color: black;
-  font-size: 30px;
+  font-size: 40px;
   border: none;
 `;

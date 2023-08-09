@@ -22,11 +22,16 @@ const Header = () => {
             <NavT>트렌드 작성</NavT>
           </NavBox>
         </a>
-
-        <a href="login" style={{ textDecoration: "none" }}>
+        <a href="/list" style={{ textDecoration: "none" }}>
+          <NavT>트렌드 목록</NavT>
+        </a>
+        <a href="/trend" style={{ textDecoration: "none" }}>
+          <NavT>트렌드 보기</NavT>
+        </a>
+        <a href="/login" style={{ textDecoration: "none" }}>
           <NavT>로그인</NavT>
         </a>
-        <a href="signup" style={{ textDecoration: "none" }}>
+        <a href="/signup" style={{ textDecoration: "none" }}>
           <NavT>회원가입</NavT>
         </a>
       </Nav>
@@ -66,7 +71,7 @@ const LogoText = styled.p`
 `;
 
 const Nav = styled.div`
-  margin-left: 900px;
+  margin-left: 700px;
   display: flex;
   flex-direction: row;
   gap: 45px;

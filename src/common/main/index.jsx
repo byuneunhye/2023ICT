@@ -1,21 +1,44 @@
 import styled from "styled-components";
 import { TagList } from "../../components/Tag/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const MainPage = () => {
-  function onChangeSearch() {}
-  const [search, setSearch] = useState("");
+  const [login, setLogin] = useState(false);
+  const [userData, setUserData] = useState({});
 
+  useEffect(() => {
+    axios
+      .get("http://172.30.1.62:3000/user/loginCheck", {
+        withCredentials: true,
+      })
+      .then(
+        ({
+          response: {
+            data: { loggedIn, loginData },
+          },
+        }) => {
+          console.log(loggedIn);
+          setLogin(loggedIn);
+          setUserData(loginData ?? {});
+        }
+      )
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+
+  const [search, setSearch] = useState("");
   return (
     <MainContainer>
       <TextBox>
         <Trend>트렌드가 궁금할 땐? </Trend>
-        <Yomu> 요즘무엇!</Yomu>
+        <Yomu> 요즘무엇! {login ? "로그됨" : "안됨"}</Yomu>
       </TextBox>
       <Input
         type="text"
         placeholder="키워드를 입력하세요"
-        onChange={onChangeSearch}
+        onChange={() => {}}
       />
       <TagContainer>
         {TagList.map((item) => (

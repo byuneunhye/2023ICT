@@ -1,7 +1,31 @@
 import styled from "styled-components";
 import LoginImg from "../../components/img/login.png";
+import { useState } from "react";
+import { customAxios } from "../../apis";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const [loginData, setLoginData] = useState({
+    id: "",
+    pw: "",
+  });
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const fetchPost = async () => {
+    try {
+      await customAxios.post("/user/login", loginData);
+      navigate("/");
+      alert("성공");
+    } catch {
+      alert("실패");
+    }
+  };
+
   return (
     <LoginContainer>
       <Left>
@@ -13,9 +37,19 @@ const Signup = () => {
           <LoginText>Login</LoginText>
           <Explain>아주 환상적인 트렌드찾기를 시작해보세요!</Explain>
         </RightContent>
-        <Input placeholder="아이디를 입력하세요"></Input>
-        <Input placeholder="비밀번호를 입력하세요"></Input>
-        <Button>Login</Button>
+        <Input
+          placeholder="아이디를 입력하세요"
+          type="text"
+          name="id"
+          onChange={onChange}
+        />
+        <Input
+          placeholder="비밀번호를 입력하세요"
+          type="text"
+          name="pw"
+          onChange={onChange}
+        />
+        <Button onClick={fetchPost}>Login</Button>
         <Con>
           <RecommendSignUp>아직회원이 아니신가요?</RecommendSignUp>
           <a href="/signup">
