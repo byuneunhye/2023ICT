@@ -35,13 +35,8 @@ const Trend = () => {
         </TagContainer>
       </PostContainer>
 
-      <Content
-        placeholder="게시글 내용을 입력하세요"
-        onChange={onChange}
-        type="text"
-        name="description"
-      ></Content>
-      {/* <Commend>
+      <Content>내용</Content>
+      <Commend>
         <ComProfile>
           <UserId>유저</UserId>
           <Date>2080.80.80</Date>
@@ -49,7 +44,7 @@ const Trend = () => {
         <ComContent>
           댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용
         </ComContent>
-      </Commend> */}
+      </Commend>
     </Container>
   );
 };
@@ -78,71 +73,57 @@ const Tag = styled.div`
   width: 152px;
   height: 46px;
   border-radius: 76px;
-  border: 2px solid #d0ebfe;
+  background-color: #d0ebfe;
   text-align: center;
   align-items: center;
   justify-content: center;
+  display: flex;
   margin-top: 30px;
 `;
 
-const Content = styled.textarea`
+const Content = styled.div`
   width: 100%;
   height: 526px;
   border: 1px solid #4f98ff;
   margin-top: 50px;
+  padding: 30px;
 `;
 
-// const ComProfile = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   gap: 10px;
-// `;
+const ComProfile = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
 
-// const Commend = styled.div`
-//   width: 1181px;
-//   border-bottom: 0.5px solid black;
-//   margin-top: 100px;
-//   display: flex;
-//   flex-direction: column;
-// `;
+const Commend = styled.div`
+  width: 1181px;
+  border-bottom: 0.5px solid black;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+`;
 
-// const UserId = styled.p`
-//   color: black;
-//   font-size: 30px;
-//   font-weight: 500;
-//   margin: 0;
-//   margin-left: 10px;
-// `;
+const UserId = styled.p`
+  color: black;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+  margin-left: 10px;
+`;
 
-// const Date = styled.p`
-//   font-size: 20px;
-//   color: lightgray;
-//   margin: 0;
-//   margin-top: 10px;
-// `;
+const Date = styled.p`
+  font-size: 20px;
+  color: lightgray;
+  margin: 0;
+  margin-top: 10px;
+`;
 
-// const ComContent = styled.div`
-//   margin: 30px 10px 20px;
-// `;
-
-const Input = styled.input`
-  width: 300px;
+const ComContent = styled.div`
+  margin: 30px 10px 20px;
 `;
 
 const TagContainer = styled.div`
   width: 100%;
-  height: 200px;
-  border: 1px solid black;
-  margin-top: 20px;
-`;
-
-const Button = styled.button`
-  width: 252px;
   height: 100px;
-  border-radius: 100px;
-  margin-top: 30px;
-  background-color: #4f98ff;
-  color: black;
-  font-size: 40px;
-  border: none;
+  margin-top: 20px;
 `;

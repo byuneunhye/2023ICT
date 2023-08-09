@@ -36,16 +36,7 @@ const WritePage = () => {
           name="title"
         />
         <TagContainer>
-          <TC>
-            태그
-            <Input
-              type="text"
-              placeholder="#   트렌드에 맞는 태그를 입력해주세요"
-            />
-            <button>추가</button>
-          </TC>
-
-          <Tag></Tag>
+          <Tag placeholder="키워드 입력"></Tag>
         </TagContainer>
       </PostContainer>
 
@@ -93,71 +84,28 @@ const Tag = styled.input`
   width: 152px;
   height: 46px;
   border-radius: 76px;
-  border: 2px solid #d0ebfe;
+  background-color: #d0ebfe;
   text-align: center;
   align-items: center;
   margin-top: 30px;
+  border: none;
 `;
 
 const Content = styled.textarea`
   width: 100%;
   height: 526px;
   border: 1px solid #4f98ff;
-  margin-top: 50px;
   font-size: 20px;
   padding: 30px;
-`;
-
-// const ComProfile = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   gap: 10px;
-// `;
-
-// const Commend = styled.div`
-//   width: 1181px;
-//   border-bottom: 0.5px solid black;
-//   margin-top: 100px;
-//   display: flex;
-//   flex-direction: column;
-// `;
-
-// const UserId = styled.p`
-//   color: black;
-//   font-size: 30px;
-//   font-weight: 500;
-//   margin: 0;
-//   margin-left: 10px;
-// `;
-
-// const Date = styled.p`
-//   font-size: 20px;
-//   color: lightgray;
-//   margin: 0;
-//   margin-top: 10px;
-// `;
-
-// const ComContent = styled.div`
-//   margin: 30px 10px 20px;
-// `;
-
-const Input = styled.input`
-  width: 300px;
+  margin-top: 10px;
 `;
 
 const TagContainer = styled.div`
   width: 100%;
-  height: 200px;
-  border: 1px solid black;
-  margin-top: 20px;
+  height: 100px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
-`;
-
-const TC = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
 `;
 
 const Button = styled.button`
