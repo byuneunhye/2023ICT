@@ -1,5 +1,15 @@
+import styled from "styled-components";
+
 const MainPage = () => {
-  return <div>메인입니당</div>;
+  return (
+    <MainContainer>
+      <div>asdf</div>
+    </MainContainer>
+  );
 };
 
 export default MainPage;
+
+const MainContainer = styled.div`
+  margin-top: 80px;
+`;
